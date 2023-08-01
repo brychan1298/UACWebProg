@@ -19,7 +19,7 @@
                             class="shadow-xl flex flex-col rounded-lg bg-gradient-to-r from-orange-500 to-pink-500 md:max-w-xl md:flex-row">
 
                             <div class="flex flex-col justify-start p-6">
-                                <a href="/detailUser/{{ $u->id }}">
+                                <a href="/detailUser2/{{ $u->id }}">
                                     <img src="{{ asset('storage/' . $u->image) }}" class="w-[20vw] h-[15vw] object-cover"
                                         alt="">
                                 </a>

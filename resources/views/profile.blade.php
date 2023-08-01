@@ -9,7 +9,7 @@
                 <div class="w-1/3">
                     <img src="{{ asset('storage/' . $user->image) }}" class="w-[20vw] h-[20vw] object-cover" alt="">
                 </div>
-                <div class="w-2/3">
+                <div class="w-2/3 bg-white shadow-2xl bg-opacity-70 p-10">
                     <p class="text-xl mb-4">
                         Name : {{ $user->name }}
                     </p>
@@ -29,11 +29,11 @@
             </div>
         </div>
         <hr class="my-5 border-red-100 border-2">
-        <div class="row mt-5 mb-12">
+        <div class="row mt-5 pb-12">
             <h2 class="text-xl mb-5">
                 Your Friend's List
             </h2>
-            <div class="grid grid-cols-4">
+            <div class="grid grid-cols-4 gap-5">
                 @foreach ($friend_to as $ff)
                     <div
                         class="shadow-xl flex flex-col rounded-lg bg-gradient-to-r from-orange-500 to-pink-500 md:max-w-xl md:flex-row">

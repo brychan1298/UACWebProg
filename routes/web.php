@@ -33,12 +33,18 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/payment', [UserController::class, 'payment']);
 Route::post('/payment', [UserController::class, 'pay']);
 Route::get('/detailUser/{id}', [UserController::class, 'show'])->middleware('auth');
+Route::get('/detailUser2/{id}', [UserController::class, 'show2'])->middleware('auth');
 
 Route::get('/profile',[UserController::class, 'profile'])->middleware('auth');
 Route::get('/top-up',[UserController::class, 'topupPage'])->middleware('auth');
 Route::post('/top-up',[UserController::class, 'topup']);
 Route::get('/notifications', [FriendController::class, 'notifications'])->middleware('auth');
 Route::get('/acc-friend/{id}', [FriendController::class, 'accept']);
+Route::get('/delete-friend/{id}', [FriendController::class, 'destroy']);
+
+Route::get('/shop',function(){
+    return view('shop');
+});
 
 Route::get('/male', [UserController::class, 'filterMale']);
 Route::get('/female', [UserController::class, 'filterFemale']);

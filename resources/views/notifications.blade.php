@@ -9,7 +9,7 @@
                 @php
                     $from = App\Models\User::find($notif->from_id);
                 @endphp
-                <div class="shadow-xl border px-7 py-5">
+                <div class="shadow-xl bg-white bg-opacity-80 mt-5 border px-7 py-5">
                     there is a friend request from <b>{{ $from->name }}</b>
                     @if ($notif->acc == 0)
                         <a href="acc-friend/{{ $notif->id }}" class="ml-8 bg-green-700 text-white px-5 py-3">

@@ -21,6 +21,20 @@ class UserController extends Controller
     public function filterMale(){
         $users = User::where('gender','Male')->get();
 
+        if(auth()->check()){
+            $users = User::where('id',"!=",auth()->user()->id)->where('gender','Male')->get();
+        }
+
+        return view('home', compact('users'));
+    }
+
+    public function filterFemale(){
+        $users = User::where('gender','Female')->get();
+
+        if(auth()->check()){
+            $users = User::where('id',"!=",auth()->user()->id)->where('gender','Female')->get();
+        }
+
         return view('home', compact('users'));
     }
 
@@ -30,6 +44,8 @@ class UserController extends Controller
         $friend->to_id = $user_id;
         $friend->acc = 0;
         $friend->save();
+
+        return view('/');
     }
 
     public function profile(){
@@ -53,21 +69,28 @@ class UserController extends Controller
         return redirect('/profile');
     }
 
-    public function filterFemale(){
-        $users = User::where('gender','Female')->get();
 
-        return view('home', compact('users'));
-    }
     public function payment(){
         $payment = User::find(auth()->user()->id)->payment;
         return view('payment', compact('payment'));
     }
 
     public function show($id){
+        $user = User::find($id);
+        return view('detailuser', compact('user'));
+    }
 
+    public function show2($id){
+        $user = User::find($id);
+        return view('detailnotFriend', compact('user'));
     }
 
     public function pay(Request $request){
+        $user = User::find(auth()->user()->id);
+        $payment = $request['price'];
+        $user->wallet = $user->wallet + ($payment - $user->payment);
+        $user->save();
 
+        return redirect('/');
     }
 }

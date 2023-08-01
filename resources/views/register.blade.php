@@ -111,8 +111,8 @@
                                         </div>
                                         <div>
                                             <input type="checkbox" class="border-gray-300 mx-2" name="hobby[]"
-                                                id="Football" value="Football">
-                                            <label for="Football">Football</label>
+                                                id="Volley" value="Volley">
+                                            <label for="Vooley">Volley</label>
                                         </div>
                                     </div>
                                     <div class="my-4 flex items-center">

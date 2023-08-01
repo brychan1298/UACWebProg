@@ -22,8 +22,9 @@
                     <p class="mb-5">
                         Hobbies : {{ $user->hobby }}
                     </p>
-                    <a href="/delete-friend/{{$user->id}}" class="px-4 py-2 bg-red-700 text-white text-xl">
-                        Remove Friends
+                    <a href="/add-friend/{{$user->id}}" class="gap-4 flex items-center bg-blue-500 text-white border-none py-4 px-2">
+                        <img src="{{asset('thumbs.png')}}" class="w-[1.5vw] h-[1.5vw]" alt="">
+                        Like & Add
                     </a>
                 </div>
             </div>

@@ -70,6 +70,11 @@
                         aria-current="page">Notifications</a>
                     <img src="{{ asset('notification.png') }}" alt="" class="w-[1.5vw] h-[1.5vw]">
                 </li>
+                <li class="p-2">
+                    <a href="/shop"
+                        class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                        aria-current="page">Buy Avatar</a>
+                </li>
             </ul>
         </div>
     </div>
